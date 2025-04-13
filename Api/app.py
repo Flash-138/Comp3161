@@ -2,10 +2,7 @@ from flask import Flask, request, make_response, jsonify
 from helper.py import assign_role
 import mysql.connector
 import json
-from flask_jwt_extended import (
-    JWTManager, create_access_token, jwt_required,
-    get_jwt_identity, get_jwt
-)
+from flask_jwt_extended import (JWTManager, create_access_token, jwt_required,get_jwt_identity, get_jwt)
 from datetime import timedelta
 
 with open('Configs\db_config.json', 'r') as f:

@@ -4,8 +4,6 @@ USE School_Management_System
 
 CREATE TABLE USER (
     user_id INT PRIMARY KEY,
-    name VARCHAR(100) Not Null,
-    email VARCHAR(100) UNIQUE Not Null,
     role ENUM('admin', 'lecturer', 'student') NOT NULL
 );
 

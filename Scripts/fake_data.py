@@ -305,33 +305,33 @@ def user_course_insert(register,sql,user_type):
 
 if __name__ == '__main__':
     print("Start")
-    #students = insert_person("Student",1000000)
-    #lecturers = insert_person("Lecturer",100)
-    #admin = insert_person("Admin",30)
+    students = insert_person("Student",1000000)
+    lecturers = insert_person("Lecturer",100)
+    admin = insert_person("Admin",30)
 
-    #students_pw = default_login(students["user_id"])
-    #lecturers_pw = default_login(lecturers["user_id"])
-    #admin_pw = default_login(admin["user_id"])
+    students_pw = default_login(students["user_id"])
+    lecturers_pw = default_login(lecturers["user_id"])
+    admin_pw = default_login(admin["user_id"])
 
     courses = insert_course(300)
 
-    #Student_Register  = (Student_Course(students,courses))
-    #Lecturers_Register = Lecturers_course(lecturers,courses)
+    Student_Register  = (Student_Course(students,courses))
+    Lecturers_Register = Lecturers_course(lecturers,courses)
 
     with open ("Scripts\\course_insert.sql","w") as sql:
 
-        #user_insert(students,sql,"students")
-        #user_insert(lecturers,sql,"lecturers")
-        #user_insert(admin,sql,"admin")
+        user_insert(students,sql,"students")
+        user_insert(lecturers,sql,"lecturers")
+        user_insert(admin,sql,"admin")
 
 
-        #login_insert(students_pw,sql,"students")
-        #login_insert(lecturers_pw,sql,"lecturers")
-        #login_insert(admin_pw,sql,"admin")
+        login_insert(students_pw,sql,"students")
+        login_insert(lecturers_pw,sql,"lecturers")
+        login_insert(admin_pw,sql,"admin")
 
         course_insert(courses,sql)
 
-        #user_course_insert(Student_Register,sql,"students")
-        #user_course_insert(Lecturers_Register,sql,"lecturers")
+        user_course_insert(Student_Register,sql,"students")
+        user_course_insert(Lecturers_Register,sql,"lecturers")
 
     sql.close()
